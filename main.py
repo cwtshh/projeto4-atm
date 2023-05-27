@@ -6,11 +6,13 @@ from view.depositScreen import DepositScreen
 from view.balanceScreen import BalanceScreen
 
 from controller.userController import UserController
+from controller.transactionController import TransactionController
 
 
 
 
 userDirectory = "projeto4-atm\\database\\users.json"
+transactionDirectory = "projeto4-atm\\database\\transactions.json"
 
 if __name__ == "__main__":
 
@@ -19,9 +21,15 @@ if __name__ == "__main__":
     with open(userDirectory) as fp:
         usersList = json.load(fp)
 
-    userController = UserController(usersList, userDirectory)
+    with open(transactionDirectory) as fp:
+        transactionsList = json.load(fp)
 
+    userController = UserController(usersList, userDirectory)
     userController.printUsers()
+
+    transactionController = TransactionController(transactionsList, transactionDirectory)
+
+
 
 
     # logic starts here
@@ -41,7 +49,7 @@ if __name__ == "__main__":
 
     LoggedUser = userController.logUser(account, password)
 
-    menu = MenuScreen(LoggedUser, userController)
+    menu = MenuScreen(LoggedUser, userController, transactionController)
 
     menu.selectMenuFunction()
 
