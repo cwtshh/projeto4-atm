@@ -40,6 +40,21 @@ class UserController:
             if user['account'] == loggedUser['account']:
                 user['money'] += value
                 self.updateJson()
+
+    def transfer(self, value, loggedUser, account):
+        for user in self.userList:
+            if user['account'] == loggedUser['account']:
+                user['money'] -= value
+
+                if user['account'] == account:
+                    user['money'] += value
+                    
+                    self.updateJson()
+
+
+        
+
+
             
 
             
