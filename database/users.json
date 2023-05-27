@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Gustavo Costa",
+        "cpf": "06646639159",
+        "password": "1234",
+        "account": "1710",
+        "money": 1950
+    },
+    {
+        "name": "Clara Ma\u00edra",
+        "cpf": "124452234567",
+        "password": "123456",
+        "account": "0609",
+        "money": 2000
+    },
+    {
+        "name": "Peter Parker",
+        "cpf": "12345678910",
+        "password": "78910",
+        "account": "1234",
+        "money": 1000
+    },
+    {
+        "name": "Tony Stark",
+        "cpf": "10987654321",
+        "password": "111213",
+        "account": "6789",
+        "money": 2000
+    }
+]
