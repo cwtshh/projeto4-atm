@@ -3,6 +3,7 @@ from view.withdrawScreen import WithdrawScreen
 from view.depositScreen import DepositScreen
 from view.transferScreen import TransferScreen
 from view.transferValueScreen import TransferValueScreen
+from view.bankStatementScreen import BankStatementScreen
 
 
 from controller.userController import UserController
@@ -22,7 +23,8 @@ class MenuScreen:
         print("# 2 - Saque                       #")
         print("# 3 - Depósito                    #")
         print("# 4 - Transferência               #")
-        print("# 5 - Sair                        #")
+        print("# 5 - Extrato                     #")
+        print("# 6 - Sair                        #")
         print("#---------------------------------#")
 
     def selectMenuFunction(self):
@@ -102,8 +104,19 @@ class MenuScreen:
                     self.transactionController.newTransaction("Transferencia", self.user['account'], value)
 
 
-        # SAIR
         if option == 5:
+            BankStatementScreen(self.user, self.transactionController)
+            answer = input("Deseja realizar outra operação? (s/n) ")
+            if(answer == "s"):
+                MenuScreen(self.user, self.userController, self.transactionController)
+                self.selectMenuFunction()
+
+            else:
+                print("Obrigado por utilizar nossos serviços!")
+                exit("Saindo...")
+
+        # SAIR
+        if option == 6:
             print("Tem certeza que deseja sair? (s/n)")
             answer = input()
 

@@ -25,3 +25,12 @@ class TransactionController:
 
         self.updateJson()
 
+    def showTransactions(self, account):
+        for transaction in self.transactionList:
+            
+            if transaction['conta'] == account:
+                print(f"Tipo: {transaction['type']} \nConta: {transaction['conta']} \nValor: {transaction['value']} \nData: {transaction['date']}\n")
+
+
+            
+
