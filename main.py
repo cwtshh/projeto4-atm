@@ -2,8 +2,6 @@ import json
 from view.logScreen import LogScreen
 from view.passScreen import PassScreen
 from view.menuScreen import MenuScreen
-from view.depositScreen import DepositScreen
-from view.balanceScreen import BalanceScreen
 
 from controller.userController import UserController
 from controller.transactionController import TransactionController
