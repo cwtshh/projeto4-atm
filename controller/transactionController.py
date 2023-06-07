@@ -12,9 +12,11 @@ class TransactionController:
         self.directory = directory
 
     # atualiza o banco de dados
-    def updateJson(self):
-        with open(self.directory, "w") as updateFile:
-            json.dump(self.transactionList, updateFile, indent=4)
+    def updateJson(self, conta, transactions):
+        with open(f"projeto4-atm\\database\\transactions\\extratos_{conta}.json", "w") as updateFile:
+            json.dump(transactions, updateFile, indent=4)
+
+        updateFile.close()
 
     # cria uma nova transação e adiciona no banco de dados
     def newTransaction(self, type, conta, value):
@@ -23,13 +25,25 @@ class TransactionController:
         transaction = Transaction(type, conta, value, date)
         convertedTransaction = vars(transaction)
 
-        self.transactionList.append(convertedTransaction)
+        with open(f"projeto4-atm\\database\\transactions\\extratos_{conta}.json") as transactionsFile:
+            transactions = json.load(transactionsFile)
+        transactions.append(convertedTransaction)
 
-        self.updateJson()
+        self.updateJson(conta, transactions)
+        
+        transactionsFile.close()
+    
+
+        """ self.transactionList.append(convertedTransaction)
+
+        self.updateJson() """
 
     # mostra as transações
     def showTransactions(self, account):
-        for transaction in self.transactionList:
+        with open(f"projeto4-atm\\database\\transactions\\extratos_{account}.json") as transactionsFile:
+            transactions = json.load(transactionsFile)
+
+        for transaction in transactions:
             
             if transaction['conta'] == account:
                 print(f"Tipo: {transaction['type']} \nConta: {transaction['conta']} \nValor: {transaction['value']} \nData: {transaction['date']}\n")

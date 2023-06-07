@@ -34,6 +34,18 @@ if __name__ == "__main__":
     LogScreen()
     account = input()
 
+    if account == "0001":
+        print("Cadastrar usuario")
+        name = input("Nome: ")
+        cpf = input("CPF: ")
+        password = input("Senha: ")
+        account = input("Conta: ")
+        money = int(input("Dinheiro: "))
+
+        userController.registerUser(name, cpf, password, account, money)
+        exit("Usuario criado com sucesso!")
+
+
     if userController.checkAccount(account) == 0:
         print("Conta não encontrada")
         exit()

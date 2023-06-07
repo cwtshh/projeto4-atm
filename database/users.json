@@ -26,5 +26,12 @@
         "password": "111213",
         "account": "6789",
         "money": 2000
+    },
+    {
+        "name": "Carlos Almeida",
+        "cpf": "56646678930",
+        "password": "1234",
+        "account": "9956",
+        "money": 950
     }
 ]
