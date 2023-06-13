@@ -1,4 +1,5 @@
 import json
+from model.client import Client
 
 class UserController:
 
@@ -18,6 +19,23 @@ class UserController:
             if account == user['account']:
                 return 1
         return 0
+    
+    def registerUser(self, name, cpf, password, account, money):
+        # insatncia uma classe, coloca na lista de usuarios e atualiza o json
+        newClient = Client(name, cpf, password, account, money)
+        convertedClient = vars(newClient)
+        self.userList.append(convertedClient)
+        self.updateJson()
+
+        # criar um json com o extrato do cliente
+        clientTransactions = open(f"projeto4-atm\\database\\transactions\\extratos_{account}.json", "x")
+        clientTransactions.write("[]")
+        clientTransactions.close()
+
+
+
+
+
     
     # checa se a conta e a senha estao corretas
     def logUser(self, account, password):

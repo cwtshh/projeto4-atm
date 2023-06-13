@@ -1,30 +1,37 @@
 [
     {
-        "name": "Gustavo Costa",
-        "cpf": "06646639159",
+        "name": "Carlos Almeida",
+        "cpf": "56646678930",
         "password": "1234",
-        "account": "1710",
-        "money": 6950
+        "account": "9956",
+        "money": 950
     },
     {
-        "name": "Clara Ma\u00edra",
-        "cpf": "124452234567",
+        "name": "Gustavo Costa",
+        "cpf": "06646639159",
+        "password": "12345",
+        "account": "1710",
+        "money": 11000
+    },
+    {
+        "name": "Clara Maira",
+        "cpf": "47738829490",
         "password": "123456",
         "account": "0609",
-        "money": 2000
+        "money": 7000
     },
     {
         "name": "Peter Parker",
-        "cpf": "12345678910",
-        "password": "78910",
-        "account": "1234",
-        "money": 1000
+        "cpf": "13349958934",
+        "password": "12345678",
+        "account": "0023",
+        "money": 8000
     },
     {
-        "name": "Tony Stark",
-        "cpf": "10987654321",
-        "password": "111213",
-        "account": "6789",
-        "money": 2000
+        "name": "Miles Morales",
+        "cpf": "98835567210",
+        "password": "1234567890",
+        "account": "0978",
+        "money": 9000
     }
 ]
