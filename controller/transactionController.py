@@ -43,8 +43,12 @@ class TransactionController:
         with open(f"projeto4-atm\\database\\transactions\\extratos_{account}.json") as transactionsFile:
             transactions = json.load(transactionsFile)
 
+        if len(transactions) == 0:
+            print("Esse usuario ainda não realizou nenhuma transação")
+            return
+        
         for transaction in transactions:
-            
+
             if transaction['conta'] == account:
                 print(f"Tipo: {transaction['type']} \nConta: {transaction['conta']} \nValor: {transaction['value']} \nData: {transaction['date']}\n")
 
